@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MoriaDev Function Server",
+    "description": "Fonctions appelables par GPT Custom MoriaDev pour automatiser les t\u00e2ches de d\u00e9veloppement.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://VOTRE-URL-NGROK.io"
+    }
+  ],
+  "paths": {
+    "/start_moriatunnel_and_n8n": {
+      "post": {
+        "summary": "D\u00e9marre le tunnel et N8n",
+        "operationId": "start_moriatunnel_and_n8n",
+        "responses": {
+          "200": {
+            "description": "Succ\u00e8s"
+          }
+        }
+      }
+    },
+    "/generate_script": {
+      "post": {
+        "summary": "G\u00e9n\u00e8re un script Python",
+        "operationId": "generate_script",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScriptGenerationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Succ\u00e8s"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ScriptGenerationRequest": {
+        "type": "object",
+        "properties": {
+          "module": {
+            "type": "string"
+          },
+          "objectif": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "module",
+          "objectif"
+        ]
+      }
+    }
+  }
+}
