@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://VOTRE-URL-NGROK.io"
+      "url": ""url": "https://sebastienbaclet.github.io/moria-redirect"
     }
   ],
   "paths": {
